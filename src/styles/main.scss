@@ -1,0 +1,148 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./animation.scss";
+
+body {
+    @apply bg-neutral-50;
+}
+
+.stickyColumn {
+    position: sticky;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+}
+
+.stickyColumnLeagueTables {
+    position: sticky;
+    @apply bg-default-50;
+    z-index: 1;
+}
+
+.stickyRank {
+    left: 0;
+}
+
+.stickyName {
+    left: 70.35px;
+}
+
+.rightBorderShadow {
+    box-shadow: inset -1px 0 0 #eee;
+}
+
+.stickyColumnGrey {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+
+.custom-table-header {
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 0.25rem 0.75rem;
+}
+
+.active-tab {
+    @apply bg-black;
+    @apply text-white;
+    svg {
+        // @apply stroke-neutral-200;
+        @apply stroke-white;
+    }
+}
+
+[data-slot="tab"] > span {
+    @apply shadow-none;
+    @apply border;
+}
+
+.animated {
+    transition-duration: 650ms !important;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+#nav-icon1,
+#nav-icon2,
+#nav-icon3,
+#nav-icon4 {
+    width: 27px;
+    height: 16px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+
+    //   transform: scaleY(0.365);
+    //   @media (max-width: 768px) {
+    // transform: scale(0.3);
+    //   }
+    transform: scale(0.75);
+}
+
+#nav-icon1 span,
+#nav-icon3 span,
+#nav-icon4 span {
+    display: block;
+    position: absolute;
+    height: 2.5px;
+    width: 100%;
+    background: black;
+    border-radius: 99px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+}
+
+#nav-icon1 span:nth-child(1) {
+    top: 0px;
+}
+
+#nav-icon1 span:nth-child(2) {
+    top: 7px;
+}
+
+#nav-icon1 span:nth-child(3) {
+    top: 14px;
+}
+
+#nav-icon1.open span:nth-child(1) {
+    top: 7px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+#nav-icon1.open span:nth-child(2) {
+    opacity: 0;
+    left: -25px;
+}
+
+#nav-icon1.open span:nth-child(3) {
+    top: 7px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
